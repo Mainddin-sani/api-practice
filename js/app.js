@@ -13,13 +13,15 @@ const displayCountries = countries => {
 var countries_Items = getId('country-head');
 countries.forEach(element => {
     let CountryDiv = document.createElement('div');
-    CountryDiv.className = 'country-items';
+    CountryDiv.className = 'col-6 col-lg-3 col-sm-6';
     
     let countryInfo = `
-        <img src="${element.flag}">
-        <h3>${element.name}</h3>
-        <p>${element.capital}</p>
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="countryDisplay('${element.name}')">Details</button>
+        <div class="country-items">
+            <img src="${element.flag}">
+            <h3>${element.name}</h3>
+            <p>${element.capital}</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="countryDisplay('${element.name}')">Details</button>
+        </div>
     `
     CountryDiv.innerHTML = countryInfo;
     countries_Items.appendChild(CountryDiv);
